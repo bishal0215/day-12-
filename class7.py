@@ -24,3 +24,7 @@ for i in range(5):
     visitors.add(name)
 print("unique visitors: ",visitors)
 print("total unique visitors: ",len(visitors))
+
+num = { 1,2,3,4}
+unique_id= set(num)
+print(num)
