@@ -76,6 +76,14 @@ def my_functions():
     return "HELLO SALLY"
 print(my_functions()) """
 
+def changecase(fund):
+    def myinner(x):
+        return fund(x).upper()
+    return myinner
+@changecase
+def my_functions(name):
+    return "hello" + name
+print(my_functions("hari"))
 
 def makechange(tea):
     def myinner():
@@ -83,6 +91,6 @@ def makechange(tea):
     return myinner
 
 @makechange
-def my_functions():
+def my_functiions():
     return "tea to coffee"
-print(my_functions())
+print(my_functiions())
