@@ -75,7 +75,7 @@ groups(**person) """
 def my_functions():
     return "HELLO SALLY"
 print(my_functions()) """
-
+""" 
 def changecase(fund):
     def myinner(x):
         return fund(x).upper()
@@ -93,4 +93,37 @@ def makechange(tea):
 @makechange
 def my_functiions():
     return "tea to coffee"
-print(my_functiions())
+print(my_functiions()) """
+
+""" def changecase(n):
+    def changecase(func):
+        def myinner():
+            if n == 1:
+                a = func().upper()
+            else:
+                a = func().lower()
+            return a
+        return myinner
+    return changecase
+
+@changecase(1)
+def my_functions():
+    return "Hello Handsome whats are you Doing "
+print(my_functions()) """
+
+def changecase(func):
+    def myinner():
+        return func().upper()
+    return myinner
+
+def add_greetings(func):
+    def myinner():
+        return "hello " + func() + " you are handsome"
+    return myinner
+
+@changecase
+@add_greetings
+def myfunction():
+    return "hari bhai"
+
+print(myfunction())
