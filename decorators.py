@@ -111,7 +111,7 @@ def my_functions():
     return "Hello Handsome whats are you Doing "
 print(my_functions()) """
 
-def changecase(func):
+""" def changecase(func):
     def myinner():
         return func().upper()
     return myinner
@@ -126,4 +126,15 @@ def add_greetings(func):
 def myfunction():
     return "hari bhai"
 
-print(myfunction())
+print(myfunction()) """
+
+import functools
+def changecase(func):
+    @functools.wraps(func) #Import functools.wraps to preserve the original function name and docstring.
+    def myinner():
+        return func().upper()
+    return myinner
+@changecase
+def my_functions():
+    return "hello hari  bhaii"
+print(my_functions.__name__)

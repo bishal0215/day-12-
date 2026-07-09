@@ -1,6 +1,6 @@
-def function(*numbers):
-    total = 0
-    for num in numbers:
-        total += num
-    return total
-print(function(4,5,6))
+list_comp = [ x * x for x in range (5)]
+print(list_comp)
+
+gen_exp = ( x * x for x in range(5))
+print(gen_exp)
+print(list(gen_exp))
